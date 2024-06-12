@@ -1,2 +1,2 @@
-# turbo-bumper
-Turborepo CLI helper for package bumping
+# Turbo Janitor
+Turborepo CLI helper for housekeeping

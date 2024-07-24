@@ -1,0 +1,35 @@
+{
+    "name": "turbo-kit",
+    "version": "1.0.0",
+    "description": "Turborepo CLI for housekeeping",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Netail/turbo-kit.git"
+    },
+    "files": [
+        "dist"
+    ],
+    "packageManager": "yarn@1.22.22",
+    "bin": {
+        "turbo-kit": "dist/cli.js"
+    },
+    "scripts": {
+        "build": "tsup --config tsup.config.json",
+        "dev": "tsup --config tsup.config.json --watch"
+    },
+    "dependencies": {
+        "@turbo/repository": "^0.0.1-canary.10",
+        "chalk": "^5.3.0",
+        "commander": "^12.1.0",
+        "semver": "^7.6.3"
+    },
+    "devDependencies": {
+        "@types/node": "^20.14.12",
+        "tsup": "^8.2.3",
+        "typescript": "^5.5.4"
+    },
+    "keywords": [
+        "turbo"
+    ]
+}

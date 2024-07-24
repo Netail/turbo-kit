@@ -1,0 +1,11 @@
+{
+    "$schema": "https://cdn.jsdelivr.net/npm/tsup/schema.json",
+    "entry": [
+        "src/bin/cli.ts"
+    ],
+    "format": [
+        "cjs"
+    ],
+    "minify": false,
+    "clean": true
+}

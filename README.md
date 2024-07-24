@@ -1,2 +1,3 @@
-# Turbo Janitor
-Turborepo CLI helper for housekeeping
+# Turbo Kit
+
+Turborepo CLI for housekeeping

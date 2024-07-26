@@ -11,13 +11,13 @@ program.name('Turbo Kit').description('Turborepo CLI for housekeeping');
 
 program
 	.command('clean')
-	.description('Cross env clean workspace')
-	.argument('[files...]', 'Delete a file or directory cross environment')
+	.description('Delete a file or directory cross environment')
+	.argument('[files...]', 'Files or directories to be deleted')
 	.action((files) => clean({ files }));
 
 program
 	.command('latest')
-	.description('Check if versions of workspaces are up to date')
+	.description('Check if the dependencies of the workspace are up to date')
 	.action(() => latest());
 
 program

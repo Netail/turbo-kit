@@ -20,7 +20,7 @@
     },
     "dependencies": {
         "@turbo/repository": "^0.0.1-canary.10",
-        "chalk": "^5.3.0",
+        "chalk": "^4.1.2",
         "commander": "^12.1.0",
         "semver": "^7.6.3"
     },

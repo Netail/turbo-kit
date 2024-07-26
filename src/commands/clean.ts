@@ -1,4 +1,4 @@
-import { rmSync } from "node:fs";
+import { rmSync } from 'node:fs';
 
 interface CleanProps {
     files: string[];
@@ -6,6 +6,14 @@ interface CleanProps {
 
 export const clean = ({ files }: CleanProps) => {
     for (const file of files) {
-        rmSync(file, { recursive: true });
+        try {
+            rmSync(file, { recursive: true });
+        } catch (err) {
+            if ((err as NodeJS.ErrnoException).code === 'ENOENT') {
+                console.warn('Failed to delete file or directory:', file);
+            } else {
+                throw err;
+            }
+        }
     }
 }

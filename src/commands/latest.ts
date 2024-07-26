@@ -1,7 +1,7 @@
 import { Workspace } from '@turbo/repository';
 import { readPackage } from '@utils/read-package';
 import { fetchLatestVersion } from '@utils/fetch-latest-version';
-import { PackageJSON } from '@interfaces/package-json';
+import type { PackageJSON } from '@interfaces/package-json';
 
 const cache = new Map<string, PackageJSON>();
 

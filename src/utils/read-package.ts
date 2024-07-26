@@ -1,6 +1,6 @@
 import path from 'node:path';
 import fs from 'node:fs';
-import { PackageJSON } from '@interfaces/package-json';
+import type { PackageJSON } from '@interfaces/package-json';
 
 export const readPackage = (pkg: string): PackageJSON | null => {
 	const packagePath = path.join(process.cwd(), pkg, 'package.json');

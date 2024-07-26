@@ -1,4 +1,4 @@
-import { PackageJSON } from '@interfaces/package-json';
+import type { PackageJSON } from '@interfaces/package-json';
 
 export const fetchLatestVersion = async (pkg: string) => {
 	try {
@@ -7,9 +7,9 @@ export const fetchLatestVersion = async (pkg: string) => {
 		if (res.ok) {
 			const packageJSON = (await res.json()) as PackageJSON;
 			return packageJSON;
-		} else {
-			throw new Error();
 		}
+
+		throw new Error();
 	} catch (err) {
 		console.error(`[Turbo Kit] - Failed fetching latest version of ${pkg}`);
 		return null;

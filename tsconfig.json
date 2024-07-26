@@ -1,23 +1,17 @@
 {
-    "compilerOptions": {
-        "lib": [
-            "ES2019"
-        ],
-        "target": "ES2019",
-        "moduleResolution": "Node",
-        "baseUrl": "src",
-        "outDir": "dist",
-        "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
-        "strict": true,
-        "skipLibCheck": true,
-        "paths": {
-            "@interfaces/*": [
-                "./interfaces/*"
-            ],
-            "@utils/*": [
-                "./utils/*"
-            ]
-        }
-    }
+	"compilerOptions": {
+		"lib": ["ES2019"],
+		"target": "ES2019",
+		"moduleResolution": "Node",
+		"baseUrl": "src",
+		"outDir": "dist",
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"skipLibCheck": true,
+		"paths": {
+			"@interfaces/*": ["./interfaces/*"],
+			"@utils/*": ["./utils/*"]
+		}
+	}
 }

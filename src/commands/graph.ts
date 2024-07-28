@@ -1,7 +1,5 @@
 import { Workspace, type PackageDetails } from '@turbo/repository';
-import chalk from 'chalk';
-
-const { underline, bold } = chalk;
+import { underline, bold } from 'chalk';
 
 const graph = async (key: keyof PackageDetails) => {
 	const workspace = await Workspace.find('.');

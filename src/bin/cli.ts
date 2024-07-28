@@ -2,7 +2,7 @@
 
 import { Command } from 'commander';
 import { clean } from '../commands/clean';
-import { latest } from '../commands/latest';
+import { updates } from '../commands/updates';
 import { dependenciesGraph, dependentsGraph } from '../commands/graph';
 
 const program = new Command();
@@ -16,9 +16,9 @@ program
 	.action((files) => clean({ files }));
 
 program
-	.command('latest')
+	.command('updates')
 	.description('Check if the dependencies of the workspace are up to date')
-	.action(() => latest());
+	.action(() => updates());
 
 program
 	.command('dependencies')

@@ -7,6 +7,7 @@
 		"type": "git",
 		"url": "git+https://github.com/Netail/turbo-kit.git"
 	},
+	"type": "module",
 	"files": ["dist"],
 	"engines": {
 		"node": "^18.18.0 || >=20.0.0",
@@ -24,7 +25,7 @@
 	},
 	"dependencies": {
 		"@turbo/repository": "^0.0.1-canary.10",
-		"chalk": "^4.1.2",
+		"chalk": "^5.3.0",
 		"commander": "^12.1.0",
 		"npm-check-updates": "^17.0.0-6"
 	},

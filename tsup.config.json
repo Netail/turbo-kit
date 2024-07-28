@@ -1,7 +1,7 @@
 {
 	"$schema": "https://cdn.jsdelivr.net/npm/tsup/schema.json",
 	"entry": ["src/bin/cli.ts"],
-	"format": ["cjs"],
+	"format": ["esm"],
 	"minify": false,
 	"clean": true
 }

@@ -4,6 +4,7 @@ import { Command } from 'commander';
 import { clean } from '../commands/clean';
 import { updates } from '../commands/updates';
 import { dependenciesGraph, dependentsGraph } from '../commands/graph';
+import { list } from '../commands/ls';
 
 const program = new Command();
 
@@ -29,5 +30,10 @@ program
 	.command('dependents')
 	.description('Display Turbo monorepo dependents graph')
 	.action(() => dependentsGraph());
+
+program
+	.command('ls')
+	.description('Display all Turbo repo packages')
+	.action(() => list());
 
 program.parse();

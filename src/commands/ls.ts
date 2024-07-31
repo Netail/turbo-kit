@@ -11,7 +11,7 @@ export const list = async () => {
 
 	const paths = packages.map(
 		(pkg) =>
-			`${pkg.relativePath} / ${chalk.underline(chalk.bold(pkg.name))}`,
+			`${pkg.relativePath} | ${chalk.underline(chalk.bold(pkg.name))}`,
 	);
 	const tree = generateAsciiTree(paths);
 	console.log(tree);

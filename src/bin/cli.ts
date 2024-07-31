@@ -17,11 +17,6 @@ program
 	.action((files) => clean({ files }));
 
 program
-	.command('updates')
-	.description('Check if the dependencies of the workspace are up to date')
-	.action(() => updates());
-
-program
 	.command('dependencies')
 	.description('Display Turbo monorepo dependencies graph')
 	.action(() => dependenciesGraph());
@@ -35,5 +30,10 @@ program
 	.command('ls')
 	.description('Display all Turbo repo packages')
 	.action(() => list());
+
+program
+	.command('updates')
+	.description('Check if the dependencies of the workspace are up to date')
+	.action(() => updates());
 
 program.parse();

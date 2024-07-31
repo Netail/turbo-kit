@@ -12,9 +12,12 @@ export const generateAsciiTree = (paths: string[]): string => {
 	// Construct the tree
 	for (const path of paths) {
 		const parsedPath = path.split(' | ');
-		const shiftedPath = parsedPath.shift()!.split(/\/|\\/g);
-		const popped = shiftedPath.pop();
-		const parts = shiftedPath.concat(`${popped} | ${parsedPath[0]}`);
+		const parts = parsedPath.shift()?.split(/\/|\\/g) || [];
+
+		if (parsedPath.length > 0) {
+			const lastItem = parts.pop();
+			parts.push(`${lastItem} | ${parsedPath}`);
+		}
 
 		let current = root;
 

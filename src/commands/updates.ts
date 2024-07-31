@@ -6,14 +6,16 @@ import chalk from 'chalk';
 export const updates = async () => {
 	const workspace = await Workspace.find('.');
 
-	const packages = await workspace.findPackages();
+	const packages = (await workspace.findPackages()).sort((a, b) =>
+		a.relativePath.localeCompare(b.relativePath),
+	);
 
 	if (packages.length === 0) {
 		console.warn('[Turbo Kit] - No packages found...');
 		process.exit(1);
 	}
 
-	await packageUpdates('Root', 'package.json');
+	await packageUpdates('root', 'package.json');
 
 	for (const pkg of packages) {
 		await packageUpdates(
@@ -39,6 +41,6 @@ const packageUpdates = async (name: string, path: string) => {
 			console.log(`${prefix} ${key} >> ${value}${isLast ? '\n' : ''}`);
 		});
 	} else {
-		console.log('└── None...\n');
+		console.log('└── none...\n');
 	}
 };

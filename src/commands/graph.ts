@@ -4,11 +4,15 @@ import chalk from 'chalk';
 const graph = async (key: keyof PackageDetails) => {
 	const workspace = await Workspace.find('.');
 
-	const packages = await workspace.findPackages();
+	const packages = (await workspace.findPackages()).sort((a, b) =>
+		a.relativePath.localeCompare(b.relativePath),
+	);
 	const packagesWithGraph = await workspace.findPackagesWithGraph();
 
 	for (const pkg of packages) {
-		const rawDependencies = packagesWithGraph[pkg.relativePath][key];
+		const rawDependencies = packagesWithGraph[pkg.relativePath][key].sort(
+			(a, b) => a.localeCompare(b),
+		);
 		const dependencies = rawDependencies.map(
 			(rawDep) =>
 				packages.find((pkg) => pkg.relativePath === rawDep)?.name,
@@ -24,7 +28,7 @@ const graph = async (key: keyof PackageDetails) => {
 				console.log(`${prefix} ${dep}${isLast ? '\n' : ''}`);
 			});
 		} else {
-			console.log('└── None...\n');
+			console.log('└── none...\n');
 		}
 	}
 };

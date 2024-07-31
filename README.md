@@ -28,6 +28,7 @@ Commands:
   clean [files...]  Cross env clean workspace
   dependencies      Display Turbo monorepo dependencies graph     
   dependents        Display Turbo monorepo dependents graph
+  ls                Display all Turbo repo packages
   updates           Check if the dependencies of the workspace are up to date
   help [command]    display help for command
 ```
@@ -45,6 +46,10 @@ Display a graph of dependencies within the monorepo.
 ### `dependents`
 
 Display a graph of dependents within the monorepo.
+
+### `ls`
+
+List all the packages in the monorepo
 
 ### `updates`
 

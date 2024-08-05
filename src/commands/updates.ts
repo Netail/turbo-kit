@@ -41,6 +41,6 @@ const packageUpdates = async (name: string, path: string) => {
 			console.log(`${prefix} ${key} >> ${value}${isLast ? '\n' : ''}`);
 		});
 	} else {
-		console.log('└── none...\n');
+		console.log('└── all up to date...\n');
 	}
 };

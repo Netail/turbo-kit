@@ -1,6 +1,6 @@
 {
 	"name": "turbo-kit",
-	"version": "1.1.3",
+	"version": "1.1.4",
 	"description": "Turborepo CLI for housekeeping",
 	"license": "MIT",
 	"repository": {
@@ -27,14 +27,14 @@
 		"@turbo/repository": "0.0.1-canary.10",
 		"chalk": "^5.3.0",
 		"commander": "^12.1.0",
-		"npm-check-updates": "~17.1.3"
+		"npm-check-updates": "~17.1.11"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.2",
-		"@types/node": "^20.16.5",
-		"husky": "^9.1.6",
-		"tsup": "^8.3.0",
-		"typescript": "^5.6.2"
+		"@biomejs/biome": "^1.9.4",
+		"@types/node": "^22.9.1",
+		"husky": "^9.1.7",
+		"tsup": "^8.3.5",
+		"typescript": "^5.7.2"
 	},
 	"keywords": ["turbo", "turborepo", "monorepo"]
 }

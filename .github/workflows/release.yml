@@ -27,7 +27,7 @@ jobs:
       - name: Config
         id: config
         run: |
-          echo "VERSION=$(npm pkg get version)" >> $GITHUB_OUTPUT
+          echo "VERSION=$(npm pkg get version --workspaces=false | tr -d \")" >> $GITHUB_OUTPUT
 
       - name: Install packages
         run: yarn install

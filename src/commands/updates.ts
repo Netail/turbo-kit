@@ -1,7 +1,7 @@
 import { Workspace } from '@turbo/repository';
 import { run } from 'npm-check-updates';
 import path from 'node:path';
-import chalk from 'chalk';
+import pc from 'picocolors';
 
 export const updates = async () => {
 	const workspace = await Workspace.find('.');
@@ -26,7 +26,7 @@ export const updates = async () => {
 };
 
 const packageUpdates = async (name: string, path: string) => {
-	console.log(chalk.underline(chalk.bold(name)));
+	console.log(pc.underline(pc.bold(name)));
 
 	const upgrades = await run({
 		packageFile: path,

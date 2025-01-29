@@ -1,6 +1,6 @@
 import { Workspace } from '@turbo/repository';
 import { generateAsciiTree } from '@utils/ascii-tree';
-import chalk from 'chalk';
+import pc from 'picocolors';
 
 export const list = async () => {
 	const workspace = await Workspace.find('.');
@@ -10,8 +10,7 @@ export const list = async () => {
 	);
 
 	const paths = packages.map(
-		(pkg) =>
-			`${pkg.relativePath} | ${chalk.underline(chalk.bold(pkg.name))}`,
+		(pkg) => `${pkg.relativePath} | ${pc.underline(pc.bold(pkg.name))}`,
 	);
 	const tree = generateAsciiTree(paths);
 	console.log(tree);

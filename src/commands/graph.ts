@@ -1,5 +1,5 @@
 import { Workspace, type PackageDetails } from '@turbo/repository';
-import chalk from 'chalk';
+import pc from 'picocolors';
 
 const graph = async (key: keyof PackageDetails) => {
 	const workspace = await Workspace.find('.');
@@ -18,7 +18,7 @@ const graph = async (key: keyof PackageDetails) => {
 				packages.find((pkg) => pkg.relativePath === rawDep)?.name,
 		);
 
-		console.log(chalk.underline(chalk.bold(pkg.name)));
+		console.log(pc.underline(pc.bold(pkg.name)));
 
 		if (dependencies.length > 0) {
 			dependencies.forEach((dep, idx) => {

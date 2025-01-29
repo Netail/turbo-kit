@@ -1,0 +1,45 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    continue-on-error: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'yarn'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          registry-url: 'https://registry.npmjs.org'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: Config
+        id: config
+        run: |
+          echo "VERSION=$(npm pkg get version)" >> $GITHUB_OUTPUT
+
+      - name: Install packages
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Publish
+        run: npm publish --access public
+
+      - name: Publish GitHub release
+        uses: elgohr/Github-Release-Action@v5
+        with:
+          title: "v${{ steps.config.outputs.VERSION }}"
+          tag: "v${{ steps.config.outputs.VERSION }}"
